@@ -1,0 +1,16 @@
+.nav-bar {
+    display: flex;
+    background-color: white;
+    border-bottom: gray;
+}
+
+.navbar-logo{
+    width:240px;
+    height: auto;
+}
+
+.navbar-links-item{
+    margin: 0;
+    padding: 10px;
+    display: inline-block;
+}
