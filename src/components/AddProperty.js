@@ -40,8 +40,8 @@ const AddProperty = () => {
   return (
     <div className="add-property">
       <h1>Add Property Page</h1>
-      <form onSubmit={handleAddProperty}>
-        <label htmlFor="title">
+      <form onSubmit={handleAddProperty} className="add-properties-form">
+        <label htmlFor="title" className="form-label">
           Title
           <input
             id="title"
@@ -52,7 +52,7 @@ const AddProperty = () => {
           />
         </label>
 
-        <label htmlFor="city">
+        <label htmlFor="city" className="form-label">
           City:
           <select
             id="city"
@@ -67,7 +67,7 @@ const AddProperty = () => {
           </select>
         </label>
 
-        <label htmlFor="type">
+        <label htmlFor="type" className="form-label">
           Property Type:
           <select
             id="type"
@@ -85,7 +85,7 @@ const AddProperty = () => {
           </select>
         </label>
 
-        <label htmlFor="bedroom">
+        <label htmlFor="bedroom" className="form-label">
           Bedrooms:
           <input
             type="number"
@@ -96,7 +96,7 @@ const AddProperty = () => {
             onChange={handleFieldChange}
           />
         </label>
-        <label htmlFor="bathroom">
+        <label htmlFor="bathroom" className="form-label">
           Bathrooms:
           <input
             type="number"
@@ -107,7 +107,7 @@ const AddProperty = () => {
             onChange={handleFieldChange}
           />
         </label>
-        <label htmlFor="price">
+        <label htmlFor="price" className="form-label">
           Price (£):
           <input
             type="number"
@@ -119,8 +119,8 @@ const AddProperty = () => {
           />
         </label>
 
-        <label htmlFor="email">
-          email:
+        <label htmlFor="email" className="form-label">
+          Email:
           <input
             id="email"
             type="email"
@@ -130,7 +130,9 @@ const AddProperty = () => {
             onChange={handleFieldChange}
           />
         </label>
-        <button type="submit">Add</button>
+        <button type="submit" className="form-input">
+          Add
+        </button>
       </form>
     </div>
   );

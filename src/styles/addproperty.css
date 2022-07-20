@@ -1,5 +1,44 @@
-.add-prop {
+.add-property {
     display: flex;
-    background-color: red;
-    border-bottom: black;
-}
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-properties-form{
+    min-width: 90%;
+    max-width: 900px;
+    display: flex;
+    grid-template-columns: 115px 1fr;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: rgb(242, 241, 248);
+    justify-content: center;
+    padding: 20px;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  .form-label {
+    text-align: right;
+    grid-column: 1 / 2;
+  }
+
+  .form-input {
+    height: 25px;
+    grid-column: 2 / 3;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  button {
+        background: rgb(225, 218, 234);
+        width: 60px; 
+        height: 100px;
+        margin-top:auto
+  }
+
+  button:hover {
+    background: rgb(216, 206, 232);
+    text-shadow: 2px 2px 2px #CCC4CE;
+  }
