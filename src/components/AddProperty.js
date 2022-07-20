@@ -31,6 +31,7 @@ const AddProperty = () => {
         // eslint-disable-next-line no-console
         console.log(error);
       });
+    setFields(initialState.fields);
   };
 
   const handleFieldChange = (event) => {
@@ -130,9 +131,7 @@ const AddProperty = () => {
             onChange={handleFieldChange}
           />
         </label>
-        <button type="submit" className="form-input">
-          Add
-        </button>
+        <button type="submit">Add</button>
       </form>
     </div>
   );
