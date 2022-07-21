@@ -13,25 +13,32 @@ const AddProperty = () => {
       price: "",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   axios.defaults.baseURL = "http://localhost:3000/api/v1";
 
   const handleAddProperty = (event) => {
     event.preventDefault();
+    setAlert({ message: "", isSuccess: false });
     axios
       .post("/PropertyListing", fields)
-      .then((response) => {
-        // eslint-disable-next-line no-console
-        console.log(response);
+      .then(() => {
+        setAlert({ message: "Property Added", isSuccess: true });
       })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error);
+      .catch(() => {
+        setAlert({
+          message: "Server error. Please try again later.",
+          isSuccess: false,
+        });
+        setFields(initialState.fields);
       });
-    setFields(initialState.fields);
   };
 
   const handleFieldChange = (event) => {
@@ -42,6 +49,7 @@ const AddProperty = () => {
     <div className="add-property">
       <h1>Add Property Page</h1>
       <form onSubmit={handleAddProperty} className="add-properties-form">
+        <alert message={alert.message} success={alert.isSuccess} />
         <label htmlFor="title" className="form-label">
           Title
           <input
