@@ -1,21 +1,24 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Alert from "../components/App";
+import Alert from "../components/Alert";
 
-test("displays an error message", () => {
+it("displays an Error message", () => {
   const { getByText, asFragment } = render(<Alert message="Error!" />);
 
   expect(getByText(/Error/).textContent).toBe("Error!");
   expect(asFragment()).toMatchSnapshot();
 });
 
-test("displays a success message", () => {
-  const { getByText } = render(<Alert message="Success!!!!" success />);
+it("displays a Success message", () => {
+  const { getByText, asFragment } = render(
+    <Alert message="Success!!!" success />
+  );
 
-  expect(getByText(/Success/).textContent).toBe("Success!!!!");
+  expect(getByText(/Success/).textContent).toBe("Success!!!");
+  expect(asFragment()).toMatchSnapshot();
 });
 
-test("does not render an error or a success message if message props is empty", () => {
+it("displays nothing, if message prop is empty", () => {
   const { asFragment } = render(<Alert message="" />);
   const alert = asFragment();
 
